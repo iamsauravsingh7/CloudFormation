@@ -1,0 +1,20 @@
+# Resources:
+#   MyInstance:
+#     Type: AWS::EC2::Instance
+#     Properties:
+#       InstanceType: t2.micro
+#       ImageId: ami-079db87dc4c10ac91
+#       Tags:
+#         - Key: Name
+#           Value: !Join [ "-", [ my,inst,from,cloudformation ] ]
+# Above template will create a new instance with name my-inst-from-cloudformation and then we have used the below template to check the changeset.
+
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-079db87dc4c10ac91
+      Tags:
+        - Key: Name
+          Value: change1
